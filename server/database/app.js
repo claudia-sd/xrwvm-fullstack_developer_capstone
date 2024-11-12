@@ -91,14 +91,14 @@ app.get('/fetchDealer/:id', async (req, res) => {
 //Write your code here
 const dealerId = req.params.id;
 try {
-    const dealer = await Dealerships.findById(dealerId);
+    const dealer = await Dealerships.find({ id: dealerId });
     if (!dealer) {
         return res.status(404).send({ message: 'Dealer not found' });
     }
     return res.status(200).json(dealer);
 } catch (error) {
     console.error(error);
-    return res.status(500).send({ message: 'Ser error' });
+    return res.status(500).send({ message: 'Server error' });
 }
 });
 
