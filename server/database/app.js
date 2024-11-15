@@ -60,8 +60,8 @@ app.get('/fetchReviews/dealer/:id', async (req, res) => {
 app.get('/fetchDealers', async (req, res) => {
 //Write your code here
 try {
-    const dealers = await Dealerships.find({});
-    res.status(200).json(dealers);
+    const dealerships = await Dealerships.find();
+    res.json(dealerships);
 } catch (error) {
     console.error('Error fetching dealers:', error);
     res.status(500).json({ message: 'Internal server error' });
