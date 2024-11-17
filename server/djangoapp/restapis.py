@@ -28,8 +28,7 @@ def get_request(endpoint, **kwargs):
         # Call get method of requests library with URL and parameters
         response = requests.get(request_url)
         return response.json()
-    except Exception as(e):
-        # If any error occurs
+    except Exception as e:
         print(f"Error: {e}")
 
 def analyze_review_sentiments(text):
