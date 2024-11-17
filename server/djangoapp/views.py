@@ -66,9 +66,8 @@ def registration(request):
         # Check if user already exists
         User.objects.get(username=username)
         username_exist = True
-    except:
-        except Exception as e:
-        print(f"Error: {e}")
+    except Exception as e:
+            print(f"Error: {e}")
 
     # If it is a new user
     if not username_exist:
