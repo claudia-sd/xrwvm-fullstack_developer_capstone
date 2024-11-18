@@ -9,7 +9,8 @@ from django.contrib.auth import logout
 # from datetime import datetime
 from .models import CarMake, CarModel
 from .populate import initiate
-from .restapis import get_request, analyze_review_sentiments, post_review
+from .restapis import get_request, analyze_review_sentiments
+# post_review
 
 from django.http import JsonResponse
 from django.contrib.auth import login, authenticate
@@ -126,7 +127,7 @@ def get_dealer_details(request, dealer_id):
 # Create a `add_review` view to submit a review
 def add_review(request):
     if (not request.user.is_anonymous):
-        data = json.loads(request.body)
+        # data = json.loads(request.body)
         try:
             # response = post_review(data)
             return JsonResponse({"status": 200})
